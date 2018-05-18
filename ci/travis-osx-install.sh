@@ -22,7 +22,10 @@ brew uninstall --ignore-dependencies --force gdal
 # Gdal and proj are already up to date, libspatialite is probably required by
 # one of them and that screws macdeployqt later on...
 brew install Dylibbundler gdal $QT_PKG
-brew link --force $QT_PKG
+
+# Currently homebrew fails to link python2, as there is other version installed.
+# Unsure why the conflict arises, we will let it do it's best and ignore the rest.
+brew link --force $QT_PKG || true
 
 find /usr/local -name "qmake*"
 find /usr/local -name "proj_api.h"
