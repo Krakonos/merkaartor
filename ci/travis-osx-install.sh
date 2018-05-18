@@ -21,7 +21,7 @@ brew uninstall --ignore-dependencies --force gdal
 
 # Gdal and proj are already up to date, libspatialite is probably required by
 # one of them and that screws macdeployqt later on...
-brew install --force Dylibbundler gdal $QT_PKG
+brew install --overwrite Dylibbundler gdal $QT_PKG
 brew link --force $QT_PKG
 
 find /usr/local -name "qmake*"
