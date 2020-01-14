@@ -2,7 +2,7 @@
 powershell Set-MpPreference -DisableRealTimeMonitoring 1
 powershell Set-MpPreference -DisableBehaviorMonitoring 1
 
-if $( $ENV:BUILD_DRIVER -like 'MSYS2*' ) {
+if ( $ENV:BUILD_DRIVER -like 'MSYS2*' ) {
 
 gdr
 
@@ -20,7 +20,7 @@ c:\tools\msys64\usr\bin\bash.exe -l -c "pacman --noconfirm --needed -S base-deve
 
 }
 
-if $( $ENV:BUILD_DRIVER -like 'MSVC*' ) {
+if ( $ENV:BUILD_DRIVER -like 'MSVC*' ) {
 
 vcpkg install proj4 gdal exiv2 qt5
 

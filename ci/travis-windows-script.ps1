@@ -1,4 +1,4 @@
-if $( $ENV:BUILD_DRIVER -like 'MSYS2*' ) {
+if ( $ENV:BUILD_DRIVER -like 'MSYS2*' ) {
 $Env:MSYSTEM="MINGW64"
 c:\tools\msys64\usr\bin\bash.exe -l -c "pwd; ci/travis-windows-script.sh || exit 1"
 if ($LastExitCode -ne 0) {
@@ -6,7 +6,7 @@ if ($LastExitCode -ne 0) {
 }
 }
 
-if $( $ENV:BUILD_DRIVER -like 'MSVC*' ) {
+if ( $ENV:BUILD_DRIVER -like 'MSVC*' ) {
 cmake .
 cmake --build .
 }
