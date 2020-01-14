@@ -1,11 +1,14 @@
 sudo: required
-dist: trusty
 env:
     - QT=5
-os:
-    - linux
-    - osx
-    - windows
+jobs:
+    include:
+        - os: linux
+          dist: trusty
+        - os: linux
+          dist: bionic
+        - os: osx
+        - os: windows
 git:
     depth: 9999999
 language: sh
