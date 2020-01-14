@@ -11,6 +11,10 @@ jobs:
           env: QT_REPO=ppa:beineri/opt-qt-5.14.0-bionic QT_PREFIX=514
         - os: osx
         - os: windows
+          env: BUILD_DRIVER=MSYS2-qmake
+        - os: windows
+          env: BUILD_DRIVER=MSVC-cmake
+
 git:
     depth: 9999999
 language: sh
