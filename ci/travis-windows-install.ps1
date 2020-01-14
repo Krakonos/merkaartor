@@ -22,7 +22,9 @@ c:\tools\msys64\usr\bin\bash.exe -l -c "pacman --noconfirm --needed -S base-deve
 
 if ( $ENV:BUILD_DRIVER -like 'MSVC*' ) {
 
+gdr
 vcpkg install proj4 gdal exiv2 qt5
+gdr
 
 }
 
