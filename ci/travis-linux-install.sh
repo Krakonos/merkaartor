@@ -2,6 +2,7 @@
 
 set -ev
 
+env
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
 sudo echo "deb http://archive.ubuntu.com/ubuntu trusty main universe restricted multiverse" \> /etc/apt/sources.list
 sudo apt-add-repository -y ppa:ubuntu-sdk-team/ppa
