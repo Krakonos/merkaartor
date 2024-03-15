@@ -43,6 +43,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.6.2'
+          add-tools-to-path: true
+      - name: Check conan
+        run: |
+          conan --version
+          conan remote list
       - name: Install dependencies
         run: |
           brew list
