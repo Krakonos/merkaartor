@@ -55,6 +55,7 @@ jobs:
         run: |
           conan --version
           conan remote list
+          conan install .
       - name: Install dependencies
         run: |
           brew list
