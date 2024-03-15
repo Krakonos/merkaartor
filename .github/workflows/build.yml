@@ -48,6 +48,9 @@ jobs:
         with:
           version: '6.6.2'
           add-tools-to-path: true
+      - name: Install Conan
+        id: conan
+        uses: turtlebrowser/get-conan@main
       - name: Check conan
         run: |
           conan --version
