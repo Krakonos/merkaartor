@@ -35,7 +35,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        QT_MAJOR: [5, 6]
+        QT_MAJOR: [6]
     name: MacOS X / Qt${{ matrix.QT_MAJOR }}
     env:
       QT_MAJOR: ${{ matrix.QT_MAJOR }}
@@ -48,22 +48,12 @@ jobs:
         with:
           version: '6.6.2'
           add-tools-to-path: true
-      - name: Install Conan
-        id: conan
-        uses: turtlebrowser/get-conan@main
-      - name: Check conan
-        run: |
-          conan --version
-          conan remote list
-          conan profile detect
-          conan install .
       - name: Install dependencies
         run: |
           brew list
-          brew install gdal exiv2 proj qt${{ matrix.QT_MAJOR }} cmake inih
+          brew install gdal exiv2 proj cmake inih
           brew unlink exiv2
           brew install --HEAD exiv2
-          brew link qt${{ matrix.QT_MAJOR }}
       - name: Build
         run: |
           ./ci/travis-osx-script.sh
