@@ -55,6 +55,7 @@ jobs:
         run: |
           conan --version
           conan remote list
+          conan profile detect
           conan install .
       - name: Install dependencies
         run: |
