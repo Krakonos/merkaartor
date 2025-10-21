@@ -351,7 +351,6 @@ bool ImportExportGdal::importGDALDataset(GDALDataset* poDS, Layer* aLayer, bool 
                 qDebug("GDAL: couldn't initialise EPSG:27700: %d: %s", ogrError, CPLGetLastErrorMsg());
                 the27700Srs->Release();
             } else {
-                theSrs->Release();
                 theSrs = the27700Srs;
             }
         }
